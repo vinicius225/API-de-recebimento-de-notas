@@ -25,7 +25,7 @@ namespace DEVTRACK.API
                 new Package("Tirtulo 04", 1.52)
             };
 
-            return Ok();
+            return Ok(package);
         }
            
 
