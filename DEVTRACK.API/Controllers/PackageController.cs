@@ -23,23 +23,24 @@ namespace DEVTRACK.API
         [HttpGet]
         public IActionResult GetAll()
         {
-            var package = _context.Packages;
-            return Ok(package);
+           // var package = _context.Packages;
+            return Ok();
         }
 
         // Get api/package/jbujbunhulk
         [HttpGet("{code}")]
         public IActionResult GetByCode(string code)
         {
-            var package = _context.Packages.SingleOrDefault(a => a.Code == code);
-            if (package != null)
-            {
-                return Ok(package);
-            }
-            else
-            {
-                return NotFound();
-            }
+        //    ;; var package = _context.Packages.SingleOrDefault(a => a.Code == code);
+        //     if (package != null)
+        //     {
+        //         return Ok(package);
+        //     }
+        //     else
+        //     {
+        //         return NotFound();
+        //     }
+        return Ok();
         }
         [HttpPost]
         public IActionResult Post(AddPackageInputModels model)
