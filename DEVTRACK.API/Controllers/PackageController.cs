@@ -27,7 +27,6 @@ namespace DEVTRACK.API
             return Ok(package);
         }
 
-
         // Get api/package/jbujbunhulk
         [HttpGet("{code}")]
         public IActionResult GetByCode(string code)
