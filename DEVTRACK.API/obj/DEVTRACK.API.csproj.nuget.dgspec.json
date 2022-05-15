@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vinic\\OneDrive\\Área de Trabalho\\Jornada C#\\DEVTRACK.API\\DEVTRACK.API.csproj": {}
+    "c:\\Users\\vinic\\OneDrive\\Área de Trabalho\\Jornada C#\\DEVTRACK.API\\DEVTRACK.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vinic\\OneDrive\\Área de Trabalho\\Jornada C#\\DEVTRACK.API\\DEVTRACK.API.csproj": {
+    "c:\\Users\\vinic\\OneDrive\\Área de Trabalho\\Jornada C#\\DEVTRACK.API\\DEVTRACK.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vinic\\OneDrive\\Área de Trabalho\\Jornada C#\\DEVTRACK.API\\DEVTRACK.API.csproj",
+        "projectUniqueName": "c:\\Users\\vinic\\OneDrive\\Área de Trabalho\\Jornada C#\\DEVTRACK.API\\DEVTRACK.API.csproj",
         "projectName": "DEVTRACK.API",
-        "projectPath": "C:\\Users\\vinic\\OneDrive\\Área de Trabalho\\Jornada C#\\DEVTRACK.API\\DEVTRACK.API.csproj",
+        "projectPath": "c:\\Users\\vinic\\OneDrive\\Área de Trabalho\\Jornada C#\\DEVTRACK.API\\DEVTRACK.API.csproj",
         "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vinic\\OneDrive\\Área de Trabalho\\Jornada C#\\DEVTRACK.API\\obj\\",
+        "outputPath": "c:\\Users\\vinic\\OneDrive\\Área de Trabalho\\Jornada C#\\DEVTRACK.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vinic\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -21,7 +21,6 @@
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,6 +39,20 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"

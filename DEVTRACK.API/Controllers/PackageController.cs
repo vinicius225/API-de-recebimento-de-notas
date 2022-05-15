@@ -46,8 +46,8 @@ namespace DEVTRACK.API
         {
 
             var package = new Package(model.Title, model.Weight);
-            _context.Packages.Add(package);
-            return CreatedAtAction("GetByCode",new {code = package.Code},package);
+           // _context.Packages.Add(package);
+            return Ok();
         }
         // //PUT/API/PACKAGE
         // public IActionResult Put(String code)
