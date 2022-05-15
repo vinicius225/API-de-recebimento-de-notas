@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using  DEVTRACK.API.Models;
+using DEVTRACK.API.Models;
 using Entities.Api;
-
+using DEVTRACK.API.Persistence;
 
 
 
@@ -14,33 +14,41 @@ namespace DEVTRACK.API
     [Route("api/package")]
     public class PackageController : ControllerBase
     {
+        private readonly DevTrackContext _context;
+        public PackageController(DevTrackContext context)
+        {
+            _context = context;
+        }
         //Get api/packages
         [HttpGet]
-        public  IActionResult GetAll()
+        public IActionResult GetAll()
         {
-            var package = new List<Package> () {
-                new Package("Tirtulo 01", 1.32),
-                new Package("Tirtulo 02", 1.62),
-                new Package("Tirtulo 03", 1.22),
-                new Package("Tirtulo 04", 1.52)
-            };
-
+            var package = _context.Packages;
             return Ok(package);
         }
-           
+
 
         // Get api/package/jbujbunhulk
         [HttpGet("{code}")]
         public IActionResult GetByCode(string code)
         {
-            var package = new Package("PAcote 2", 0.34);
-            return Ok(package);
+            var package = _context.Packages.SingleOrDefault(a => a.Code == code);
+            if (package != null)
+            {
+                return Ok(package);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
         [HttpPost]
-        public IActionResult Post(AddPackageInputModels model)        
+        public IActionResult Post(AddPackageInputModels model)
         {
+
             var package = new Package(model.Title, model.Weight);
-            return Ok();
+            _context.Packages.Add(package);
+            return CreatedAtAction("GetByCode",new {code = package.Code},package);
         }
         // //PUT/API/PACKAGE
         // public IActionResult Put(String code)
@@ -54,7 +62,9 @@ namespace DEVTRACK.API
             var package = new Package("Pacote 01", 1.25);
 
 
-            return Ok ();
+            return Ok(package);
         }
     }
 }
+
+
